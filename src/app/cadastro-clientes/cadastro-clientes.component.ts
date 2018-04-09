@@ -11,17 +11,21 @@ import { Validators } from '@angular/forms';
 export class CadastroClientesComponent implements OnInit {
   // depois de todo o processo, importar o ReactiveFormsModule no app.module.ts
 
-  formGroup : FormGroup;
+  formGroup: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {
     this.formGroup = this.formBuilder.group({
-      nome: ['Joaquin', [Validators.required, Validators.minLength(5), Validators.maxLength(120)]],
-      telefone: ['977261827', [Validators.required]],
-      email: ['joaquin@gmail.com', [Validators.required, Validators.email]]
+      nome: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(120)]],
+      telefone: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]]
     })
-   }
+  }
 
   ngOnInit() {
+  }
+
+  cadastrar(){
+    console.log(this.formGroup.value);
   }
 
 }
