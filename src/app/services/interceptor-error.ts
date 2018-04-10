@@ -21,7 +21,7 @@ export class ErrorInterceptor implements HttpInterceptor {
         console.log(cod);
 
         switch (cod) {
-            case 400:
+            case 401:
                 return "Você não possui acesso";
             default:
                 return "Error Default";
